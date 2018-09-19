@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "c4bd9666-4a14-4b38-b737-b85dc472e3f5",
+		"name": "Task Heady",
+		"description": "Heady Backend Developer SAT\n\nThe Task is Building a RESTful APIs from scratch using Express - Node.js. The Entities are a “Categories” and “Products”. Category can have multiple child categories. Child category can have further child categories. Category can have multiple products and product can have a multiple categories. The Entities must get saved in MongoDb and be retrieved via POST and GET Methods respectively. Also, the candidate must be aware of HTTP Verbs and their significance in RESTful APIs. You need to design a proper Mongodb data model and create APIs to\n\n- Add a category\n- Add Product mapped to a category or categories.\n- Get all categories with all its child categories mapped to it. Note : Each category object should look something   like this {Id : 1 , child_categories: [], ...}\n- Get all products by a category.\n- Update product details (name,price,etc)\n\nStack: Express Node.js, Mongodb\nTime Frame: 5 days. Source Code Sharing: Please share the code on any public Git repository",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Categories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\" : \"Learn MongoDB With Express\", \"price\": \"6000\", \"categories\": [\"5ba21bc159ff0426d42bf4e5\"], \"description\": \"Learn mongo and node with express and mongoose in 5 days\"}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/id123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"id123"
+					]
+				},
+				"description": "Get all categories with all its child categories mapped to it. Note : Each category object should look something like this {Id : 1 , child_categories: [], ...}"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products by CategoryID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/product/id123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"id123"
+					]
+				},
+				"description": "Get all products by a category."
+			},
+			"response": []
+		},
+		{
+			"name": "POST Category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Electronics\"}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/category/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category",
+						""
+					]
+				},
+				"description": "Add a category"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Panasonic\", \"price\": \"50000\", \"categories\" : [\"5ba233940dcb1331f4ac28cb\"], \"description\": \"A LED Television Set with good sound and clarity\"}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						""
+					]
+				},
+				"description": "Add Product mapped to a category or categories."
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Panasonic\", \"price\": \"30000\", \"categories\" : [\"5ba233940dcb1331f4ac28cb\"], \"description\": \"A LED Television Set with good sound and clarity\"}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/5ba2341a0dcb1331f4ac28cc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"5ba2341a0dcb1331f4ac28cc"
+					]
+				},
+				"description": "Update product details (name,price,etc)"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6622a1d1-3824-470d-bc12-6cb8bd6a272e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "41ba1f76-b680-4eb2-88d6-43a86c1b6ea9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
